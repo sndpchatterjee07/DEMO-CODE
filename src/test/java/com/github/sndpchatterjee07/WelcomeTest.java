@@ -11,6 +11,8 @@ import org.junit.Ignore;
  */
 public class WelcomeTest {
 
+	Welcome welcome = new Welcome("Hello World!");
+
 	/**
 	 * Rigorous Test :-)
 	 */
@@ -20,9 +22,24 @@ public class WelcomeTest {
 		assertThat(1, is(1));
 	}
 
+	/**
+	 * 
+	 * To check if getGreetingMessage returns the same Greeting Message what was
+	 * initialized.
+	 *
+	 */
 	@Test
 	public void getGreetingMessage_whenInitializedWithGreeting_returnsGreeting() {
-		Welcome welcome = new Welcome("Hello World!");
 		assertThat(welcome.getGreetingMessage(), is("Hello World!"));
 	}
+
+	/**
+	 * To check the returned character count of getGreetingMessage
+	 *
+	 */
+	@Test
+	public void getGreetingMessage_characterCount() {
+		assertEquals(12, welcome.getGreetingMessage().length());
+	}
+
 }

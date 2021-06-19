@@ -5,21 +5,35 @@ package com.github.sndpchatterjee07;
  * @version 1.0
  *
  */
-public class Welcome{
+public class Welcome {
 
-    private String greetingMessage;
+	/** The greeting message. */
+	private String greetingMessage;
 
-    // CONSTRUCTOR.
-    public Welcome(String greetingMessage){
-        this.greetingMessage = greetingMessage;
-    }
+	/**
+	 * Instantiates a new welcome.
+	 *
+	 * @param greetingMessage the greeting message
+	 */
+	public Welcome(String greetingMessage) {
+		this.greetingMessage = greetingMessage;
+	}
 
-    // ACCESSORS & MUTATORS.
-    public void setGreetingMessage(String greetingMessage) {
-        this.greetingMessage = greetingMessage;
-    }
+	/**
+	 * Sets the greeting message.
+	 *
+	 * @param greetingMessage the new greeting message
+	 */
+	public void setGreetingMessage(String greetingMessage) {
+		this.greetingMessage = greetingMessage;
+	}
 
-    public String getGreetingMessage() {
-        return greetingMessage;
-    }
+	/**
+	 * Gets the greeting message.
+	 *
+	 * @return the greeting message
+	 */
+	public String getGreetingMessage() {
+		return greetingMessage;
+	}
 }
