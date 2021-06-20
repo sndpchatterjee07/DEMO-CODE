@@ -1,4 +1,4 @@
-package com.github.sndpchatterjee07.api.razorpay;
+package com.github.sndpchatterjee07.api.razorpay.core.handlers;
 
 import java.io.IOException;
 import java.io.InputStream;

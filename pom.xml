@@ -28,11 +28,19 @@
 			<scope>test</scope>
 		</dependency>
 
-       <!-- 2. Razorpay -->
+		<!-- 2. Razorpay -->
 		<dependency>
 			<groupId>com.razorpay</groupId>
 			<artifactId>razorpay-java</artifactId>
 			<version>1.3.9</version>
+		</dependency>
+
+		<!-- 3. JsonTemplate -->
+		<!-- URL : https://github.com/json-template/JsonTemplate -->
+		<dependency>
+			<groupId>com.github.json-template</groupId>
+			<artifactId>jsontemplate</artifactId>
+			<version>0.2.1</version>
 		</dependency>
 
 

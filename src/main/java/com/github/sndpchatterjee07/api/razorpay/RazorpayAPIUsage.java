@@ -1,6 +1,9 @@
 package com.github.sndpchatterjee07.api.razorpay;
 
-import com.razorpay.Customer;
+import org.json.JSONObject;
+
+import com.github.sndpchatterjee07.api.razorpay.core.entities.MyCustomer;
+import com.github.sndpchatterjee07.api.razorpay.core.handlers.RazorpayClientHandler;
 import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
 
@@ -16,29 +19,35 @@ import com.razorpay.RazorpayException;
  */
 public class RazorpayAPIUsage {
 
+	/** The Business Entity MyCustomer. */
+	private static MyCustomer myCustomer;
+
+	/** The JSONObject. */
+	private static JSONObject jsonObject;
+
 	public static void main(String[] args) {
 
 		RazorpayClientHandler razorpayClientHandler = RazorpayClientHandler.getNewInstance();
 
 		RazorpayClient razorpayClient = razorpayClientHandler.createNewRazorPayClient();
 
-		/*
-		 * CREATE A CUSTOMER
-		 * 
-		 */
-		// JSONObject request = new JSONObject();
-		// request.put("name", "Sandeep Chatterjee");
-		// request.put("email", "sndpchatterjee@gmail.com");
-		// Customer customer = razorpayClient.Customers.create(request);
+		// 1. CREATING A RAZORPAY CUSTOMER.
+
+		myCustomer = new MyCustomer.Builder("Faye J. Hill", "+442546949976", "FayeJHill@teleworm.uk").build();
+
+		jsonObject = new JSONObject();
+
+		jsonObject.put("name", myCustomer.getName());
+
+		jsonObject.put("contact", myCustomer.getContact());
+
+		jsonObject.put("email", myCustomer.getEmail());
 
 		try {
 
-			// FETCH CUSTOMER BY ID.
-			Customer customer = razorpayClient.Customers.fetch("cust_HP2AmXM7SoqWZI");
+			razorpayClient.Customers.create(jsonObject);
 
-			System.out.println(customer.toJson().get("name"));
-
-			System.out.println(customer.toJson().get("email"));
+			System.out.println("NEW CUSTOMER CREATED!");
 
 		} catch (RazorpayException razorpayException) {
 
